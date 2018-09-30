@@ -124,7 +124,7 @@ $(function(){
 				$("#resultTextSec5").html(prenom + " <br/> vous va très bien")	
 				$("#resultSubTextSec5").html("Partage ton prénom sur les réseaux sociaux")	
 				
-				var message = twitterUrl + "Ouf mon prénom n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour, clique ";
+				var message = twitterUrl + "Ouf mon prénom  " + prenom + " n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour, clique ";
 				
 				$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')
 				
