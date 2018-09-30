@@ -7,6 +7,7 @@ $(function(){
 	var gender;
 	var audio = new Audio();
 	var delayInMilliseconds = 2000; 
+	var twitterUrl = "https://platform.twitter.com/widgets/tweet_button.html?size=l&hashtags=EricTeBaptise&url=https://erictebaptise.azurewebsites.net&text=";
 	
 	$("#wizard").steps({
         headerTag: "h4",
@@ -122,11 +123,17 @@ $(function(){
 			setTimeout(function() {
 				$("#resultTextSec5").html(prenom + " <br/> vous va très bien")	
 				$("#resultSubTextSec5").html("Partage ton prénom sur les réseaux sociaux")	
+				
+				var message = twitterUrl + "Ouf mon prénom n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour, clique ";
+				
+				$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')
+				
 				$("#wizard").steps('next');
 			}, delayInMilliseconds);
 				
 		}else{
 			console.log(prenom);
+			
 			if(prenom.toLowerCase() === "hapsatou"){
 				setTimeout(function() {
 					newprenom = "Corinne";
@@ -181,7 +188,9 @@ $(function(){
 	
 	function setResult5(url){
 		$("#resultTextSec5").html(newprenom + " <br/>ça vous irait très bien")	
-		$("#resultSubTextSec5").html("Partage ton nouveau prénom sur les réseaux sociaux")				
+		$("#resultSubTextSec5").html("Partage ton nouveau prénom sur les réseaux sociaux")	
+		var message = twitterUrl + "Mon prénom est une honte à la France, Éric Zemmour m’as baptisé " + newprenom + ". Pour un baptême en ligne par Éric, clique ";
+		$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')			
 		playAudio(url)
 		$("#wizard").steps('next');
 	}
