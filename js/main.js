@@ -89,7 +89,6 @@ $(function(){
 						}else{
 							$("#resultText").text("Le prénom " + prenom + " est une INSULTE à la France !")
 							$('#resultSubText').text("Pas de panique l'heure de ton baptême est arrivé")
-							//playAudio('https://s1.vocaroo.com/media/download_temp/Vocaroo_s1nAEcuNF4YU.mp3')
 							playAudio('mp3/zemmourprenom.mp3')
 						}
 						
@@ -185,7 +184,7 @@ $(function(){
 	}
 	
 	function setResult5(url){
-		var message = twitterUrl + prenom + " est une honte à la France, Éric Zemmour m’a baptisé " + newprenom + ". Pour un baptême en ligne par Éric ";	
+		var message = twitterUrl + prenom + " est une insulte à la France, Éric Zemmour m’a baptisé " + newprenom + ". Pour un baptême en ligne par Éric ";	
 		$("#tweetDiv").html('<iframe allowtransparency="true" style="padding-top: 20px;padding-left: 100px;" frameborder="0" scrolling="no" src="' + message + '"></iframe>')		
 		$("#resultTextSec5").html(newprenom + " <br/>ça vous irait très bien")	
 		$("#resultSubTextSec5").html("Partage ton nouveau prénom sur les réseaux sociaux")	
