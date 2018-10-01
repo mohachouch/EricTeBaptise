@@ -255,7 +255,8 @@ h3 {
 
   .wrapper {
     width: auto;
-    padding: 0; }
+    padding: 0;
+    margin-top: 50px;	}
 
   .wizard {
     height: auto;
