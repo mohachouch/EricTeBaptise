@@ -121,12 +121,10 @@ $(function(){
 		
 		if(isFrench){
 			setTimeout(function() {
+				var message = twitterUrl + "Ouf mon prénom " + prenom + " n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour ";
+				$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')
 				$("#resultTextSec5").html(prenom + " <br/> vous va très bien")	
 				$("#resultSubTextSec5").html("Partage ton prénom sur les réseaux sociaux")	
-				
-				var message = twitterUrl + "Ouf mon prénom " + prenom + " n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour ";
-				
-				$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')
 				
 				$("#wizard").steps('next');
 			}, delayInMilliseconds);
@@ -187,10 +185,10 @@ $(function(){
 	}
 	
 	function setResult5(url){
+		var message = twitterUrl + prenom + " est une honte à la France, Éric Zemmour m’a baptisé " + newprenom + ". Pour un baptême en ligne par Éric ";	
+		$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')		
 		$("#resultTextSec5").html(newprenom + " <br/>ça vous irait très bien")	
 		$("#resultSubTextSec5").html("Partage ton nouveau prénom sur les réseaux sociaux")	
-		var message = twitterUrl + prenom + " est une honte à la France, Éric Zemmour m’a baptisé " + newprenom + ". Pour un baptême en ligne par Éric ";
-		$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')			
 		playAudio(url)
 		$("#wizard").steps('next');
 	}
