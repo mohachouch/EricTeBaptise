@@ -59,7 +59,7 @@ $(function(){
 		if(prenom.toLowerCase() === "hapsatou"){
 			setTimeout(function() {
 				$("#resultText").text("Le prénom " + prenom + " est une INSULTE à la France !")
-				$('#resultSubText').text("Pas de panique l'heure de ton baptéme est arrivé")
+				$('#resultSubText').text("Pas de panique l'heure de ton baptême est arrivé")
 				playAudio('mp3/zemmourprenom.mp3')
 				$("#wizard").steps('next');
 			}, delayInMilliseconds);
@@ -83,12 +83,12 @@ $(function(){
 						console.log(isFrench);
 						
 						if(isFrench){
-							$("#resultText").text("Bravo, Votre mére à fait un très bon choix !")
-							$('#resultSubText').text("Je peux vous baptiser")
+							$("#resultText").text("Bravo, Votre mêre à fait un très bon choix !")
+							$('#resultSubText').text("Je peux tout de même vous baptiser")
 							playAudio('https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3')
 						}else{
 							$("#resultText").text("Le prénom " + prenom + " est une INSULTE à la France !")
-							$('#resultSubText').text("Pas de panique l'heure de ton baptéme est arrivé")
+							$('#resultSubText').text("Pas de panique l'heure de ton baptême est arrivé")
 							//playAudio('https://s1.vocaroo.com/media/download_temp/Vocaroo_s1nAEcuNF4YU.mp3')
 							playAudio('mp3/zemmourprenom.mp3')
 						}
@@ -124,7 +124,7 @@ $(function(){
 				$("#resultTextSec5").html(prenom + " <br/> vous va très bien")	
 				$("#resultSubTextSec5").html("Partage ton prénom sur les réseaux sociaux")	
 				
-				var message = twitterUrl + "Ouf mon prénom " + prenom + " n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour, clique ";
+				var message = twitterUrl + "Ouf mon prénom " + prenom + " n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour ";
 				
 				$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')
 				
@@ -189,7 +189,7 @@ $(function(){
 	function setResult5(url){
 		$("#resultTextSec5").html(newprenom + " <br/>ça vous irait très bien")	
 		$("#resultSubTextSec5").html("Partage ton nouveau prénom sur les réseaux sociaux")	
-		var message = twitterUrl + "Mon prénom est une honte à la France, Éric Zemmour m’as baptisé " + newprenom + ". Pour un baptême en ligne par Éric, clique ";
+		var message = twitterUrl + prenom + " est une honte à la France, Éric Zemmour m’a baptisé " + newprenom + ". Pour un baptême en ligne par Éric ";
 		$("#tweetDiv").html('<iframe allowtransparency="true" frameborder="0" scrolling="no" src="' + message + '"></iframe>')			
 		playAudio(url)
 		$("#wizard").steps('next');
