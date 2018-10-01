@@ -196,10 +196,8 @@ $(function(){
 		
 		  FB.ui({
             method: 'feed',
-            name: 'Manoj Yadav',
-            link: 'http://www.manojyadav.co.in/',
-            picture: 'https://www.gravatar.com/avatar/119a8e2d668922c32083445b01189d67',
-            description: 'Manoj Yadav a PHP Developer from Mumbai, India'
+            link: 'https://erictebaptise.azurewebsites.net/',
+            description: message
         });
 	});
 	
