@@ -7,7 +7,8 @@ $(function(){
 	var gender;
 	var audio = new Audio();
 	var delayInMilliseconds = 2000; 
-	var twitterUrl = "https://platform.twitter.com/widgets/tweet_button.html?size=l&hashtags=EricTeBaptise&url=https://erictebaptise.azurewebsites.net&text=";
+	var twitterUrl = "https://twitter.com/intent/tweet?hashtags=EricTeBaptise&url=https%3A%2F%2Ferictebaptise.azurewebsites.net&text=";
+	var message = "";
 	
 	$("#wizard").steps({
         headerTag: "h4",
@@ -120,11 +121,10 @@ $(function(){
 		
 		if(isFrench){
 			setTimeout(function() {
-				var message = twitterUrl + "Ouf mon prénom " + prenom + " n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric Zemmour ";
-				$("#tweetDiv").html('<iframe allowtransparency="true" style="padding-top: 20px;padding-left: 100px;" frameborder="0" scrolling="no" src="' + message + '"></iframe>')
+				message = "Ouf mon prénom " + prenom + " n’est pas une insulte à la France, toi aussi vérifie et fait toi baptiser par Éric ";
+
 				$("#resultTextSec5").html(prenom + " <br/> vous va très bien")	
 				$("#resultSubTextSec5").html("Partage ton prénom sur les réseaux sociaux")	
-				
 				$("#wizard").steps('next');
 			}, delayInMilliseconds);
 				
@@ -184,11 +184,18 @@ $(function(){
 	}
 	
 	function setResult5(url){
-		var message = twitterUrl + "Mon prénom " + prenom + " est une insulte à la France, Éric Zemmour m’a baptisé " + newprenom + ". Pour un baptême en ligne par Éric ";	
-		$("#tweetDiv").html('<iframe allowtransparency="true" style="padding-top: 20px;padding-left: 100px;" frameborder="0" scrolling="no" src="' + message + '"></iframe>')		
+	    message = "Mon prénom " + prenom + " est une insulte à la France, Éric m’a baptisé " + newprenom + ". Pour un baptême en ligne par Éric ";	
 		$("#resultTextSec5").html(newprenom + " <br/>ça vous irait très bien")	
 		$("#resultSubTextSec5").html("Partage ton nouveau prénom sur les réseaux sociaux")	
 		playAudio(url)
 		$("#wizard").steps('next');
 	}
+	
+	$("#facebookButton").click(function(e) {
+	    window.open(twitterUrl + message, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+	});
+	
+	$("#twitterButton").click(function(e) {
+		window.open(twitterUrl + message, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+	});
 })
