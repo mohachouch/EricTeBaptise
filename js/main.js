@@ -25,6 +25,7 @@ $(function(){
 			if (newIndex === 0){
 				$('.steps ul').removeClass('step-2');
 				$('.steps ul').addClass('step-1');
+				$("#wizard .actions a[href='#next']").show();
             }
 			else if (newIndex === 1){
 				goToStep2();
