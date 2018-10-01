@@ -192,10 +192,38 @@ $(function(){
 	}
 	
 	$("#facebookButton").click(function(e) {
-	    window.open(twitterUrl + message, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+	    //window.open(twitterUrl + message, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+		
+		  FB.ui({
+            method: 'feed',
+            name: 'Manoj Yadav',
+            link: 'http://www.manojyadav.co.in/',
+            picture: 'https://www.gravatar.com/avatar/119a8e2d668922c32083445b01189d67',
+            description: 'Manoj Yadav a PHP Developer from Mumbai, India'
+        });
 	});
 	
 	$("#twitterButton").click(function(e) {
 		window.open(twitterUrl + message, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
 	});
+	
+	
+	(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id))
+        return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://connect.facebook.net/fr_FR/all.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId: '1666767543433284',  // Change appId 409742669131720 with your Facebook Application ID
+			status: true,
+			xfbml: true,
+			cookie: true
+		});
+	};
 })
