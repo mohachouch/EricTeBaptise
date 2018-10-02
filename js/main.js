@@ -57,6 +57,7 @@ $(function(){
 		$("#wizard .actions a[href='#next']").hide();
 		
 		prenom = $('#inputName').val();
+		gender = $('#selectGenre').val();
 		
 		if(prenom.toLowerCase() === "hapsatou"){
 			setTimeout(function() {
@@ -76,12 +77,12 @@ $(function(){
 					success: function (data) {
 						hasErrorProperty = data.hasOwnProperty('error');
 						
-						if(hasErrorProperty){
-							$("#wizard").steps('previous');
-							return;
+						if(!hasErrorProperty){
+							isFrench = isFrenchName(data)
+						}else{
+							isFrench = false;
 						}
 						
-						isFrench = isFrenchName(data)
 						console.log(isFrench);
 						
 						if(isFrench){
@@ -119,6 +120,8 @@ $(function(){
 		$("#wizard .actions a[href='#next']").hide();
 		
 		var url = "https://www.behindthename.com/api/random.json?usage=fre&gender=" + gender + "&number=1&key=mo238238234";
+	
+		console.log(url);
 		
 		if(isFrench){
 			setTimeout(function() {
@@ -164,9 +167,7 @@ $(function(){
 	
 	function isFrenchName(data){
 		var isFrench = false; 
-		data.forEach(function(element) {
-			gender = element.gender;
-					
+		data.forEach(function(element) {		
 			element.usages.forEach(function(usage) {
 				console.log(usage.usage_code);
 				if(usage.usage_code === "fre"){
