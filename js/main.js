@@ -86,7 +86,7 @@ $(function(){
 						console.log(isFrench);
 						
 						if(isFrench){
-							$("#resultText").text("Bravo, Votre mêre à fait un très bon choix !")
+							$("#resultText").text("Bravo, Votre mère a fait un très bon choix !")
 							$('#resultSubText').text("Je peux tout de même vous baptiser")
 							playAudio('https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3')
 						}else{
